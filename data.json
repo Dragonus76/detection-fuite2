@@ -1,0 +1,26 @@
+[
+    {
+        "timestamp": "2023-08-06T00:00:00",
+        "source": "Sensor_A",
+        "debit_m3s": 4.0,
+        "pression_bar": 2.5,
+        "niveau_eau_pct": 85.0,
+        "anomalie": false
+    },
+    {
+        "timestamp": "2023-08-06T00:01:00",
+        "source": "Sensor_A",
+        "debit_m3s": 3.5,
+        "pression_bar": 2.7,
+        "niveau_eau_pct": 86.0,
+        "anomalie": false
+    },
+    {
+        "timestamp": "2023-08-06T00:02:00",
+        "source": "Sensor_A",
+        "debit_m3s": 3.0,
+        "pression_bar": 2.9,
+        "niveau_eau_pct": 87.0,
+        "anomalie": true
+    }
+]
