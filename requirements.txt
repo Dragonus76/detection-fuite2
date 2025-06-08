@@ -1,1 +1,6 @@
 Flask
+streamlit
+pandas
+plotly
+folium
+streamlit_folium
