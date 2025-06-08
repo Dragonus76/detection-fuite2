@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Surveillance des fuites - {{ city }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Surveillance des fuites - {{ city }}</h1>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Horodatage</th>
+                <th>Débit (m³/s)</th>
+                <th>Pression (bar)</th>
+                <th>Niveau d'eau (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row.timestamp }}</td>
+                <td>{{ '%.2f'|format(row.debit) }}</td>
+                <td>{{ '%.2f'|format(row.pression) }}</td>
+                <td>{{ '%.2f'|format(row.niveau_eau) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

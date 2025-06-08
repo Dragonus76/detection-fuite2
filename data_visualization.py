@@ -1,4 +1,4 @@
-mport time
+import time
 import random
 import logging
 import threading
@@ -65,7 +65,7 @@ def visualize():
         except Exception as e:
             logging.error(f"Error in visualization: {e}")
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     # Stop the data collection loop by pressing 'Enter'
     input_thread = threading.Thread(target=input, args=("Press 'Enter' to stop data collection...\n",))
     input_thread.daemon = True

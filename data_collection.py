@@ -67,13 +67,20 @@ def get_data():
 
 def check_thresholds(data, config):
     alerts = []
+    city = config.get('location', 'city', fallback='Casablanca')
 
     for key, value in data.items():
-        threshold = float(config.get('thresholds', f'seuil_{key}'))
-
-        if value > threshold:
-            logger.warning("Fuite détectée! %s anormal: %s", key, value)
-            alerts.append(('Alerte de fuite', f'Fuite détectée! {key.capitalize()} anormal: {value}'))
+        option = f'seuil_{key}'
+        if config.has_option('thresholds', option):
+            threshold = float(config.get('thresholds', option))
+            if value > threshold:
+                logger.warning("Fuite détectée! %s anormal: %s", key, value)
+                alerts.append(
+                    (
+                        f'Alerte de fuite - {city}',
+                        f'Fuite détectée à {city}! {key.capitalize()} anormal: {value}',
+                    )
+                )
 
     return alerts
 
