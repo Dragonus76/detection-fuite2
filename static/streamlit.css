@@ -1,0 +1,14 @@
+body {
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    color: #008cba;
+}
+
+/* Streamlit tweaks */
+.stButton>button {
+    background-color: #008cba;
+    color: white;
+}
